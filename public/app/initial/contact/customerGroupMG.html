@@ -1,0 +1,38 @@
+<!-- admin/myModalContent.html -->
+<div class="modal-header">
+    <h3 class="modal-title">{{data.title}}</h3>
+</div>
+<div class="modal-body">
+
+
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled" ng-submit="ok()">
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">分类编码<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-4">
+                    <input ng-readonly="data.type=='edit'" type="text" class="form-control" ng-model="data.item.cclassid" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">分类名称<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="data.item.cclassname" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">备注</label>
+                <div class="col-sm-4">
+                    <!-- <input type="text" class="form-control" ng-model="tempItem.cd_cremark" /> -->
+                    <textarea class="form-control" ng-model="data.item.cdesc" rows="3"></textarea>
+
+                </div>
+            </div>
+        </div>
+        <footer class="modal-footer" >
+            <button type="submit" class="btn btn-success ">确定</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+        </footer>
+     </form>
+
+
+</div>

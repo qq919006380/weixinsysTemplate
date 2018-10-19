@@ -1,0 +1,119 @@
+<style>
+    .MPur{
+        height: 32px;
+    }
+    .MPur .TitleText{
+        width: 100px;text-align: right;line-height: 32px;float: left;
+    }
+
+    .MPur .inputChild{
+        width: 440px;float: left;margin-left: 20px;
+    }
+
+    .MPur .inputChild .postInput{
+        width: 360px;
+    }
+    .MPur .inputChild .selectText{
+        width: 150px;
+        float: left;
+    }
+
+    .MPur .inputChild  .selectText .selectTextChlid{
+        width: 120px;
+    }
+
+    .MPur .inputChild  .selectText .selectTextbtn{
+        width: 30px;height:26px;float: right;border: 1px solid silver;border-left: 0px solid silver;font-size: 14px;text-align: center;
+    }
+    .MPur .inputChild .fromText{
+        width: 150px;float: left;line-height: 24px;height: 28px;padding: 0px;cursor: auto;
+    }
+
+    .MPur .inputChild .formCenter{
+        width: 60px;text-align: center;float: left;line-height: 30px;
+    }
+
+
+    .MPur .inputChild .singSelect .selectTextDataIn
+    {
+        float: left;
+        width: 330px;
+    }
+
+    .MPur .inputChild .singSelect .selectTextbtnDataIn
+    {
+        width: 30px;height:26px;float: left;border: 1px solid silver;border-left: 0px solid silver;font-size: 14px;text-align: center;
+    }
+
+    @media (max-width: 313px) {
+
+        .MPur{
+            display:none;
+        }
+    }
+
+    @media (max-width: 413px) {
+
+        .MPur .inputChild .postInput{
+            width: 262px;
+        }
+        .MPur .inputChild .fromText{
+            width: 110px;float: left;line-height: 24px;height: 28px;padding: 0px;cursor: auto;
+        }
+        .MPur .inputChild .selectText{
+            width: 110px;
+            float: left;
+        }
+
+        .MPur .inputChild .singSelect .selectTextDataIn
+        {
+            float: left;
+            width: 232px;
+        }
+
+        .MPur .inputChild .singSelect .selectTextbtnDataIn
+        {
+            width: 30px;height:26px;float: left;border: 1px solid silver;border-left: 0px solid silver;font-size: 14px;text-align: center;
+        }
+
+        .MPur .inputChild  .selectText .selectTextChlid{
+            width: 80px;
+        }
+        .MPur .inputChild  .selectText .selectTextbtn{
+            width: 30px;height:26px;float: right;border: 1px solid silver;border-left: 0px solid silver;font-size: 14px;text-align: center;
+        }
+        .MPur .inputChild .formCenter{
+            width: 40px;text-align: center;float: left;line-height: 30px;
+        }
+
+    }
+    @media (max-width: 614px){
+
+
+        .MPur{
+            height: 64px;
+        }
+        .MPur .TitleText{
+            width: 100px;line-height: 32px;float: left;text-align:left;
+        }
+        .MPur .inputChild{
+            width: 100%;float: left;margin-left: 0px;
+        }
+
+    }
+</style>
+
+<div zx-set-focus-on>
+<div class="modal-header">
+    <h9 class="modal-title">查询条件</h9>
+</div>
+<div class="modal-body">
+<query-zx-model data="data" cancel="cancel" ></query-zx-model>
+</div>
+<div class="modal-footer" style="padding: 2px;">
+
+    <button class="btn btn-success" ng-click="ok()">确定</button>
+    <button class="btn btn-default" ng-click="cancel()">取消</button>
+    <button class="btn btn-success"  style="float: left;"  ng-click="clear()">清空条件</button>
+</div>
+</div>

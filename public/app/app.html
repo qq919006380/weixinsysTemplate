@@ -1,0 +1,58 @@
+<!-- app/app.html -->
+
+  <!-- navbar -->
+  <div data-ng-include=" './tpl/blocks/header.html' " class="app-header navbar">
+  </div>
+  <!-- / navbar -->
+
+  <!-- menu -->
+  <div data-ng-include=" './tpl/blocks/aside.html' " class="app-aside hidden-xs {{app.settings.asideColor}}" >
+  </div>
+  <!-- / menu -->
+
+  <!-- toaster directive -->
+  <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+  <!-- / toaster directive -->
+
+  <!-- content -->
+  <div class="app-content">
+    <div ui-butterbar></div>
+    <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
+  
+    <!-- breadcrumb directive -->
+    <div ncy-breadcrumb></div>
+     <!-- toaster directive -->
+    <div class="app-content-body fade-in-up" ui-view></div>
+    
+    <!-- Tab导航栏 -->
+    <!-- <zx-tab-nav></zx-tab-nav> -->
+    <!-- Tab视图集容器 -->
+    <!-- <zx-tab-views></zx-tab-views> -->
+
+  </div>
+
+  </div>
+  <!-- /content -->
+
+  <!-- footer -->
+
+
+  <div class="app-footer wrapper b-t bg-light">
+    <span class="pull-right">{{app.version}}
+      <!-- <a href ui-scroll="app" class="m-l-sm text-muted">
+        <i class="fa fa-long-arrow-up"></i>
+      </a> -->
+    </span>
+    <span>&copy; 2017 Copyright  广东智星电脑软件有限公司版权所有</span>
+
+  </div>
+
+
+
+
+  <!-- / footer -->
+
+  <!-- settings -->
+  <div data-ng-include=" './tpl/blocks/settings.html' " class="settings panel panel-default">
+  </div>
+   <!-- / footer  -->

@@ -1,0 +1,154 @@
+
+/**
+**zxsoft-menu组件的样式
+**/
+
+#menuContent .scroll {
+  /*background:red;*/
+}
+
+.menuBox {
+
+}
+
+.menuBox .leftMenuDiv {
+  float:left;
+  width:15%;
+  height:100%;
+  margin-right: -1px;
+  background-color:#666;
+  text-align:center;
+}
+
+.menuBox .rightContentDiv {
+  width: 100%;
+  height:100%;
+  background-color:#fff;
+  overflow:auto;
+}
+
+.menuBox .rightContentScrollDiv {
+  width: 85%;
+  position:absolute;
+  margin-left: 15%;
+  float: right;;
+  left:0;
+  top:0;
+}
+
+
+.menuBox .rightContentScrollDiv .rightBodyScroll .scroll .disable-user-behavior .list{
+  min-height: 100%;
+}
+
+
+.menuBox .leftMenuDiv .list {
+  border:0;
+  background-color:#fff;
+  margin-right: -1px;
+}
+
+.menuBox .leftMenuDiv .list .item {
+  width:100%;
+  min-height:90px;
+  padding:0;
+  border:0;
+  font-size:13px;
+  color:#fff;
+  background-color:#666;
+}
+
+.menuBox .item-complex .item-content, 
+.menuBox .item-radio .item-content {
+  padding:0;
+}
+
+.menuBox .leftMenuDiv .list .item.active {
+  color:#379FE4;
+  background-color:#fff;
+  font-weight:600;
+}
+
+.menuBox .leftMenuDiv .list .item:hover {
+  color:#333;
+  cursor:pointer;
+}
+
+.menuBox .leftMenuDiv .list .item .text {
+  margin:0 auto;
+  margin-top:10px;
+  display:inline-block;
+  width:20px;
+  line-height:18px;
+  white-space: normal;
+  text-align:center;
+}
+
+.menuBox .rightContentDiv .list {
+  margin-left: 1px;
+  margin-bottom:0;
+  padding:0;
+  overflow: auto;
+  background-color:#fff;
+}
+
+.menuBox .rightContentDiv .list .item {
+  float:left;
+  width:33%;
+  height:90px;
+  margin-top: 1px;
+  padding:22px 0;
+  border:0;
+  text-align:center;
+}
+
+.menuBox .rightContentDiv .list .rowtitle {
+  width:100%;
+  height:30px;
+  margin-top:0;
+  padding:0;
+}
+
+.menuBox .rightContentDiv .list .rowtitle a {
+  height:28px;
+}
+
+
+.menuBox .deivideLine {
+  width:100%;
+  height:30px;
+  margin:0;
+  background-color:#e6e6e6;
+}
+
+.menuBox .deivideLine p {
+    width: 80px;
+  height:20px;
+  line-height:20px;
+  margin:0 5px;
+  border-left:5px solid #379FE4;
+  color:#939393;
+  font-weight:600;
+  font-size:14px;
+}
+
+.menuBox .rightContentDiv .list .item i {
+  font-size:30px;
+  color:#379FE4;
+}
+
+.menuBox .rightContentDiv .list .item .text {
+  font-size:12px;
+  color:#939393;
+  font-weight:600;
+}
+
+
+
+
+
+
+
+
+
+

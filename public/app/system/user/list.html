@@ -1,0 +1,54 @@
+<!-- admin/user/userform.html -->
+<div class="wrapper-md" ng-controller="UserformController" >
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <zx-tools-bar config="toolsbar"></zx-tools-bar>
+        </div>
+
+        <!-- hbox layout -->
+        <div class="hbox hbox-auto-xs hbox-auto-sm bg-light" style="height:750px;">
+
+            <!-- column -->
+            <div class="col w b-r" ng-show="false">
+                <div class="vbox">
+                    <a class="btn btn-link btn-block" ng-click="getUserData('')" style="border-bottom:1px solid #ddd; line-height: 27px;" >用户分类列表</a>
+                    <!-- zx-ztree -->
+                    <zx-ztree id="userTree" class="ztree" ng-if="treeData.length>0" config="treeConfig" data="treeData" handle="treeHandle" ></zx-ztree>
+                    <!-- end zx-ztree -->
+                </div>
+            </div>
+            <!-- /column -->
+
+            <!-- column -->
+            <div class="col lter b-r">
+                <div class="vbox">
+                    <!-- <a class="btn btn-link btn-block" style="border-bottom:1px solid #ddd; line-height: 27px;" >用户列表</a> -->
+                    <div class="wrapper-xs b-b">
+                        <!-- 网点搜索框 -->
+                        <div class="input-group m-b-xxs">
+                            <div class="input-group">
+                                <input type="text" class="input-sm form-control" placeholder="请输入用户名称或编码" ng-model="search_context" 
+                                ng-keydown="enterSearch($event)">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-sm btn-default" ng-click="search()" type="button">查询</button>
+                                </span>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- 用户列表-->
+                    <div id="usergrid" ui-grid="gridUserOpts" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-move-columns style="height: 665px"></div>
+                    <!-- end 用户列表-->
+
+                    <!-- <h4 style="margin-top:35px;" >角色列表</h4> -->
+                    <!-- 角色列表-->
+                    <!-- <div id="rolegrid" ui-grid="gridRoleOpts" ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-move-columns style="height: 200px"></div> -->
+                    <!-- end 角色列表-->
+                </div>
+            </div>
+
+        </div>
+        <!-- end hbox layout -->
+
+    </div>
+</div>

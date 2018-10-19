@@ -1,0 +1,220 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{data.title}}</h3>
+</div>
+<!--客户信息表单-->
+<div class="modal-body">
+
+    <!-- 客户信息表单-->
+
+    <form  class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled" ng-submit="ok()">
+        <div class="panel-body">
+            <div class="form-group col-sm-6" ng-if="data.type=='new'">
+                <label class="col-sm-4 control-label">建立人</label>
+                <div class="col-sm-8">
+                    <input ng-readonly=true type="text" class="form-control" ng-model="tempItem.cbeginman" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6" ng-if="data.type=='new'">
+                <label class="col-sm-4 control-label">建立日期</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="true" type="text" class="form-control" ng-model="tempItem.cbegindt" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6" ng-if="data.type=='edit'">
+                <label class="col-sm-4 control-label">修改人</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="true" type="text" class="form-control" ng-model="tempItem.ceditman" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6" ng-if="data.type=='edit'">
+                <label class="col-sm-4 control-label">修改日期</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="true" type="text" class="form-control" ng-model="tempItem.ceditdt" />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户分类<span style="padding-left:4px;color:red">*</span></label>
+              <!--  <div class="col-sm-8">
+                    <select ng-disabled="edit" class="form-control" ng-model="tempItem.cd_cclassid" ng-options="tr.cd_cclassid as tr.cd_cname for tr in cladata"></select>
+
+                </div>-->
+                <div class="col-sm-8">
+                    <ui-select ng-model="classselect" theme="bootstrap" on-select="onSelectCallback($item)">
+                        <ui-select-match placeholder="选择分类">{{$select.selected.cclassname}}</ui-select-match>
+                        <ui-select-choices repeat="item in cladata | filter: $select.search">
+                            <!-- <div ng-bind-html="item.cd_cname | highlight: $select.search"></div> -->
+                            <span ng-bind-html="item.cclassname | highlight: $select.search"></span>(
+                            <small ng-bind-html="item.cclassid | highlight: $select.search"></small>)
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户编码<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly="data.type=='edit'" type="text" class="form-control" ng-model="tempItem.ccustid" required/>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户名称<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.ccustname" required/>
+                </div>
+            </div>
+            <!-- <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">默认货币</label>
+                <div class="col-sm-8">
+                    <select ng-disabled="edit" class="form- " ng-model="tempItem.cm_ccyid" ng-options="sc.sc_ccyid as sc.sc_ccyname+'('+sc.sc_ccyid+')' for sc in syscoin"></select>
+                </div>
+            </div> -->
+            <!-- <div class="form-group  col-sm-6">
+                <label class="col-sm-4 control-label">付款条件<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+
+                    <select ng-disabled="edit" class="form-control" ng-model="tempItem.cm_cpaycondtion" ng-options="p.pm_cpyid as p.pm_cname+'('+p.pm_cpyid+')' for p in payments"></select>
+                </div>
+            </div> -->
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户联系人</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.clinknman"  />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户密码</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.ccpwd"  />
+                </div>
+            </div>
+
+            <!-- <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">公众号appid</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.cappid"  />
+                </div>
+            </div> -->
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户电话</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.cphone" onblur="if(this.value.length==0){return} else if(! /^\d+$/.test(this.value)){alert('请输入数字');this.value='';}" />
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">客户地址</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.caddress" />
+                </div>
+            </div>
+            <!-- <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">启动日期</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="tempItem.cuse_date"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened12=true" is-open="opened12" close-text="关闭" clear-text="清空" current-text="今天" >
+                </div>
+            </div> -->
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">终止日期</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="tempItem.cend_date"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened13=true" is-open="opened13" close-text="关闭" clear-text="清空" current-text="今天" >
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">公众号名称</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.cappname" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">公众认证文件名</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.capptxt" />
+                </div>
+            </div>
+            
+            
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">公众号appid<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly='edit' type="text" class="form-control" ng-model="tempItem.cappid" required/>
+                </div>
+            </div>
+            
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">开发者密码<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.csecret" required/>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">API地址<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.webapiurl" required/>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">端口号<span style="padding-left:4px;color:red">*</span></label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.webapiport" required/>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">备注</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="edit" type="text" class="form-control" ng-model="tempItem.cdesc" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">审核人</label>
+                <div class="col-sm-8">
+                    <input ng-readonly="true" type="text" class="form-control" ng-model="tempItem.cflagman" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">审核日期</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="tempItem.cflagdate"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened14=true" is-open="opened14" close-text="关闭" clear-text="清空" current-text="今天" >
+                </div>
+            </div>
+            
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">是否审核</label>
+                <input ng-disabled="data.type !='new'" type="checkbox" ng-model="tempItem.cflag" >
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">启用标识</label>
+                <input type="checkbox" ng-model="tempItem.cstop" >
+
+            </div>
+            <!-- 上传文件  -->
+            <div class="form-group col-sm-6">   
+                <input type="file" id='uploadFile' ngf-select 
+                ng-change="getFile()"
+                ng-model="txtFile" name="file" accept="text/plain,application/json" 
+                ngf-max-size="2MB"
+                ngf-model-invalid="errorFile">
+                <!-- <button  ng-click="uploadPic(txtFile)">Submit</button> -->
+            </div>
+
+
+        </div>
+       <!--  <footer class="text-center" ng-show="!edit" >
+           <button type="submit" class="btn btn-success btn-lg">保存</button>
+           <button ng-click="cancel()" type="button" class="btn btn-success btn-lg">取消</button>
+       </footer> -->
+       <footer class="modal-footer">
+            <input type="submit" class="btn btn-success" value="确定"/>
+            <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+        </footer>
+    </form>
+
+</div>
+

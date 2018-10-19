@@ -1,0 +1,33 @@
+<div>
+<style>
+    .Maclist{
+        margin-left: 10px;
+        padding-right: 25px;
+        height: 30px;
+        /*border: 1px solid #cfb1ae;*/
+        float: left;
+    }
+</style>
+    <div ng-repeat="items in content" class="Maclist">
+
+        <div style="">
+             <span style="float: left;color: #bf6041;">{{items.name}}:</span>
+             <div style="float: left;" ng-if="items.data=='str'"> {{items.str}} </div>
+             <div style="float: left;" ng-if="items.data=='obj'">
+                 <span >{{items.str[0].value}}</span>
+                 <span style="width: 24px;">至</span>
+                 <span>{{items.str[1].value}} </span>
+             </div>
+            <div style="float: left;" ng-if="items.data=='tit'"> 
+                {{items.str[0].value}}{{items.str[1].value}} 
+            </div>
+            <div style="float: left;" ng-if="items.data=='val'">
+                {{items.str[1].value}} 
+            </div>
+           </div>
+        <div style="position: absolute;height: 30px;width: 30px;right: 0px;">
+            <i class="ico "></i>
+        </div>
+
+    </div>
+</div>

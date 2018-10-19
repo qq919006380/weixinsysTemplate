@@ -1,0 +1,6 @@
+<div class="tab-nav" onselectstart="return false;">
+	<ul class="list" >
+		<li class="item closeAllBtn" ng-if="tabs.length>0" ng-click="CloseAllTab()" ><i class="fa fa-trash-o" ></i> 关闭全部</li>
+	    <li class="item" ng-class="{'active':tab.active}" ng-repeat="tab in tabs track by $index" ng-click="switchTab(tab)" >{{tab.name}} <span class="closeBtn" ng-click="closeTab(tab,$event)" >X</span> </li>
+	</ul>
+</div>

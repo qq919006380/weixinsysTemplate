@@ -1,0 +1,33 @@
+<!-- app/initial/employee/dept.html -->
+<div class="modal-header">
+    <h3 class="modal-title">{{data.title}}</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled" ng-submit="ok()">
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-sm-4 control-label"><span>*</span>部门编码</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="tempItem.cdclassid" ng-readonly="data.type=='edit'" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label"><span>*</span>部门名称</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" ng-model="tempItem.cdtname" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">备注</label>
+                <div class="col-sm-4">
+                    <textarea class="form-control" ng-model="tempItem.cremark" rows="3"></textarea>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">确定</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+        </div>
+    </form>
+</div>

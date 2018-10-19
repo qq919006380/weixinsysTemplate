@@ -1,0 +1,44 @@
+{
+
+  "header" : {
+    "navbar" : {
+      "setting" : {
+        "SETTING" : "设置",
+        "SYSTEM" : "系统设置",
+        "CHANGEPSD" : "修改密码",
+        "USER" : "个人设置",
+        "LOGOUT" : "退出"
+
+      }
+    }
+  },
+  "aside" : {
+    "nav" : {
+      "components" : {
+        "system" : {
+          "SYSTEM" : "系统管理",
+          "YHGL":"用户管理"
+        },
+        "initial" : {
+          "INITIAL" : "基础资料",
+          "CUSTOMER" : "客户资料",
+          "EMPLOYEE" : "员工资料"          
+        }
+      }
+    }
+  },
+  "action":{
+    "NEW":"新增",
+    "SAVE":"保存",
+    "DEL":"删除",
+    "MOD":"修改",
+    "VIEW":"查看",
+    "CHECK":"审核",
+    "UNCHECK":"反审核",
+    "UPLOAD":"上传",
+    "YES":"是",
+    "NO":"否",
+    "LOGIN":"登录",
+    "LOGOUT":"退出"
+  }
+}

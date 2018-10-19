@@ -1,0 +1,109 @@
+
+<div ng-repeat="content in data" style="" class="MPur">
+<div ng-if="content.type=='input'" style="">
+    <div class="TitleText">{{content.title}}:</div>
+    <div class="inputChild">
+        <input type="text" class="postInput" ng-model="content.value" ng-keydown="changeEnter($event)" >
+    </div>
+</div>
+
+<div ng-if="content.type=='date'" style="" >
+    <div class="TitleText">{{content.title}}:</div>
+    <div class="inputChild">
+            <input type="text"   class="form-control fromText" ng-model="content.value[0].value"
+                   datepicker-popup="yyyy-MM-dd" is-open="content.value[0].opened" max-date="content.value[1].value" ng-click="opendate(content.value[0])" readonly>
+
+            <!--<input type="date" style="width: 150px;float: left;line-height: 24px;" ng-model="content.value[0].value">-->
+        <div style="" class="formCenter">至</div>
+        <input type="text"  class="form-control fromText" ng-model="content.value[1].value"
+               datepicker-popup="yyyy-MM-dd" is-open="content.value[1].opened" min-date="content.value[0].value" ng-click="opendate(content.value[1])" readonly ng-focus="setfocusdata(content)">
+        <!--<input type="date" style="width: 150px;float: left;line-height: 24px;" ng-model="content.value[1].value">-->
+    </div>
+</div>
+
+
+<div ng-if="content.type=='select'" style="">
+    <div class="TitleText">{{content.title}}:</div>
+    <div class="inputChild">
+        <ui-select ng-model="content.value[0]" theme="bootstrap" on-select="setDataClick(content,$item)" class="postInput">
+            <ui-select-match placeholder="选择">{{getValue(content.list,content.value[0].value)}}</ui-select-match>
+            <ui-select-choices repeat="coin in content.list" >
+                <span ng-bind-html="coin.name "></span>
+                <!--<small ng-bind-html="coin.id "></small>-->
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>
+
+<div ng-if="content.type=='selectEvent'" style="">
+    <div class="TitleText">{{content.title}}:</div>
+    <div class="inputChild">
+        <ui-select ng-model="content.value[0]" theme="bootstrap" 
+        on-select="selectChangeEvent(content,$item)(content,$item)" ng-change="ngselectChange(content,$item)" class="postInput">
+            <ui-select-match placeholder="选择">
+                {{getValue(content.list,content.value[0].value)}}
+            </ui-select-match>
+            <ui-select-choices repeat="coin in content.list" >
+                <span ng-bind-html="coin.name "></span>
+                <!--<small ng-bind-html="coin.id "></small>-->
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</div>
+
+<div ng-if="content.type=='radio'" class="text-center">
+        <div class="radio-inline" ng-repeat="x in content.list">
+            <label class="i-checks">
+                <input type="radio" name="radio" value="{{$index}}" ng-model="content.value[0].value">
+                <i></i>
+                {{x.name}}
+            </label>
+        </div>
+
+    </div>
+
+<div ng-if="content.type=='radioEvent'" class="text-center">
+    <div class="radio-inline" ng-repeat="x in content.list">
+        <label class="i-checks">
+            <input type="radio" name="radio" value="{{x.id}}" ng-model="content.value[0].value" ng-click="radioClick(content,x)">
+            <i></i>
+            {{x.name}}
+        </label>
+    </div>
+
+</div>
+
+<div ng-if="content.type=='selectOn'" style="">
+    <div class="TitleText">{{content.title}}:</div>
+    <div  class="inputChild">
+       <div class="selectText">
+           <input type="text" class="selectTextChlid"  ng-model="content.value[0].value" ng-keydown="changeEnter($event)">
+           <div class="selectTextbtn"  ng-click="getSelectData(content,0)">
+               <i class="fa fa-caret-down fa-fw fa-fw"></i>
+           </div>
+       </div>
+        <!--<input type="date" style="width: 150px;float: left;line-height: 24px;" ng-model="content.value[0].value">-->
+        <div class="formCenter">至</div>
+        <div  class="selectText">
+            <input type="text"  class="selectTextChlid"  ng-model="content.value[1].value" ng-keydown="changeEnter($event)" ng-focus="setfocusdata(content)">
+            <div style="" class="selectTextbtn"  ng-click="getSelectData(content,1)">
+                <i class="fa fa-caret-down fa-fw fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="content.type=='selectText'" style="">
+        <div class="TitleText">{{content.title}}:</div>
+        <div  class="inputChild">
+            <div class="singSelect">
+                <input type="text" class="selectTextDataIn"  ng-model="content.value" ng-keydown="changeEnter($event)">
+                <div class="selectTextbtnDataIn"  ng-click="getSelectText(content)">
+                    <i class="fa fa-caret-down fa-fw fa-fw"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,9 @@
+{"navs" :[
+  { "clevel":"01", "name":"系统管理", "translateId":"aside.nav.components.system.SYSTEM", "icon":"glyphicon glyphicon-list","parent_id": "0" },
+  { "clevel":"0104", "name":"用户管理", "sref":"app.user.list", "translateId":"aside.nav.components.system.YHGL","parent_id": "01"   },
+  
+  { "clevel":"02", "name":"基础资料", "translateId":"aside.nav.components.initial.INITIAL", "icon":"glyphicon glyphicon-list","parent_id": "0" },
+  { "clevel":"0239", "name":"客户资料", "sref":"app.contact.list", "translateId":"aside.nav.components.initial.CUSTOMER" ,"parent_id": "02" },  
+  { "clevel":"0245", "name":"员工资料", "sref":"app.employee.list", "translateId":"aside.nav.components.initial.EMPLOYEE"  ,"parent_id": "02"}
+]
+}

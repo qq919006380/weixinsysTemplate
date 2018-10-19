@@ -1,0 +1,57 @@
+<div class="form-group col-sm-6" ng-repeat="form in formdata">
+    <label class="col-sm-4 control-label"><span style="padding-left:4px;color:red" ng-if="form.start">*</span>{{form.name}}</label>
+    <div class="col-sm-8" ng-if="form.input==1">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]"  readonly>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==2">
+        <input type="text" class="form-control"
+               datepicker-popup="yyyy-MM-dd"
+               ng-model="dataarr[form.value]" ng-click="form.opendate($index)"
+               is-open="form.open" close-text="关闭" clear-text="清空" current-text="今天" readonly >
+    </div>
+    <div class="col-sm-8" ng-if="form.input==3">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]" ng-disabled="disabled" ng-click="form.Callback()">
+    </div>
+    <div class="col-sm-8" ng-if="form.input==4">
+        <ui-select ng-model="form.classselect" theme="bootstrap" on-select="form.Callback($item)">
+            <ui-select-match placeholder="选择分类">{{$select.selected.cd_cname}}</ui-select-match>
+            <ui-select-choices repeat="item in form.classitems | filter: $select.search">
+                <span ng-bind-html="item.cd_cname | highlight: $select.search"></span>(
+                <small ng-bind-html="item.cd_cclassid | highlight: $select.search"></small>
+                )
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==5">
+        <select class="form-control" ng-model="dataarr[form.value]" ng-disabled="disabled" ng-change="$parent[form.click]()" >
+            <option value="1">{{form.option1}}</option>
+            <option value="2">{{form.option2}}</option>
+        </select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==6">
+        <input type="checkbox" ng-model="dataarr[form.value]" data-select="{{dataarr[form.value]=dataarr[form.value]=='1'?true:false}}"><i></i>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==7">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]"  ng-required="form.start">
+    </div>
+        <div class="col-sm-8" ng-if="form.input==8">
+            <select  class="form-control" ng-model="dataarr[form.value]"
+                    ng-options="se.sm_cno as se.sm_cname+'('+se.sm_cno+')' for se in form.settlemodes"></select>
+        </div>
+    <div class="col-sm-8" ng-if="form.input==9">
+        <select  class="form-control" ng-model="dataarr[form.value]"
+                 ng-options="sys.sc_ccyid as sys.sc_ccyname+'('+sys.sc_ccyid+')' for sys in form.syscoin"></select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==10">
+        <select  class="form-control" ng-model="dataarr[form.value]"
+                ng-options="pay.pm_cpyid as pay.pm_cname+'('+pay.pm_cpyid+')' for pay in form.payment"></select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==11">
+        <select class="form-control" ng-model="dataarr[form.value]"
+                ng-options="ee.ee_cid as ee.ee_cname+'('+ee.ee_cid+')' for ee in form.employee"></select>
+    </div>
+
+    <div class="col-sm-8" ng-if="form.input==12">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]" ng-click="form.Callback()" ng-required="form.start">
+    </div>
+</div>

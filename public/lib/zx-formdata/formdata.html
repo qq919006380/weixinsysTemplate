@@ -1,0 +1,53 @@
+<div class="input-detail col-sm-4" ng-repeat="form in formdata">
+    <label class="col-sm-4 control-label"><span style="padding-left:4px;color:red" ng-if="form.start">*</span>{{form.name}}</label>
+    <div class="col-sm-8" ng-if="form.input==1">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]"  readonly>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==2">
+        <input type="text" class="form-control"
+               datepicker-popup="yyyy-MM-dd"
+               ng-model="dataarr[form.value]" ng-click="opendate(form.value)"
+               is-open="opened[form.value]" close-text="关闭" clear-text="清空" current-text="今天" readonly ng-disabled="$parent.disabled">
+    </div>
+    <div class="col-sm-8" ng-if="form.input==3">
+        <input type="text" class="form-control" ng-model="dataarr[form.value]"
+               ng-disabled="$parent.disabled" ng-click="$parent[form.click]()" ng-keyup="$parent[form.keyup]()" ng-required="form.start" ng-readonly="form.read">
+    </div>
+    <div class="col-sm-8 input-coin-box" ng-if="form.input==4" >
+        <ui-select ng-model="coinObj" theme="bootstrap" on-select="onSelectCallback($item)" ng-disabled="$parent.disabled">
+            <ui-select-match placeholder="选择货币">{{dataarr.sc_ccyname}}</ui-select-match>
+            <ui-select-choices repeat="c in coinservice | filter: $select.search">
+                <span ng-bind-html="c.sc_ccyname | highlight: $select.search"></span>(
+                <small ng-bind-html="c.sc_ccyid | highlight: $select.search"></small>)
+            </ui-select-choices>
+        </ui-select>
+        <!--隐藏提示-->
+        <input type="text" ng-model="dataarr.sc_ccyid" class="input-coin" required>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==5">
+        <select class="form-control" ng-model="dataarr[form.value]" ng-disabled="$parent.disabled" ng-change="$parent[form.click]()" >
+            <option value="0" ng-if="form.option0">{{form.option0}}</option>
+            <option value="1" ng-if="form.option1">{{form.option1}}</option>
+            <option value="2" ng-if="form.option2">{{form.option2}}</option>
+            <option value="3" ng-if="form.option3">{{form.option3}}</option>
+            <option value="4" ng-if="form.option4">{{form.option4}}</option>
+        </select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==6">
+        <select class="form-control" ng-model="dataarr[form.value]" ng-disabled="true" ng-change="$parent[form.click]()">
+            <option value="1">{{form.option1}}</option>
+            <option value="2">{{form.option2}}</option>
+            <option value="3">{{form.option3}}</option>
+            <option value="4">{{form.option4}}</option>
+        </select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==7">
+        <select class="form-control" ng-model="dataarr[form.value]" ng-disabled="$parent.disabled" ng-change="$parent[form.click]()"  ng-options="o.value as o.name for o in form.options" >
+        </select>
+    </div>
+    <div class="col-sm-8" ng-if="form.input==8">
+        <input type="number" step="0.01" class="form-control" ng-model="dataarr[form.value]"
+               ng-disabled="$parent.disabled" ng-click="$parent[form.click]()" ng-keyup="$parent[form.keyup](form.value);$parent[form.keyup2](form.value)"  ng-required="form.start" ng-readonly="form.read"  oninput="if(value.length>11)value=value.slice(0,13)">
+    </div>
+</div>
+

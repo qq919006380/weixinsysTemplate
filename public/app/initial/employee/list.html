@@ -1,0 +1,41 @@
+<!-- app/initial/employee/list.html -->
+<div ng-controller="EmployeeController">
+    <div class="panel-heading">
+        <zx-tools-bar config="toolsbar"></zx-tools-bar>
+    </div>
+
+    <div class="hbox hbox-auto-xs hbox-auto-sm bg-light">
+        <div class="col w b-r" ng-show="false">
+            <div class="vbox">
+                <a class="btn btn-link btn-block" style="border-bottom:1px solid #ddd; line-height: 27px;"
+                   ng-click="selectGroup({cd_cclassid:''})">全部部门</a>
+                <!-- zx-ztree -->
+                <zx-ztree id="DeptTree" class="ztree" ng-if="treeData.length>0" config="treeConfig" data="treeData"
+                          handle="treeHandle"></zx-ztree>
+                <!-- end zx-ztree -->
+            </div>
+        </div>
+
+        <!-- column -->
+        <div class="col lter b-r">
+            <div class="vbox">
+                <div class="wrapper-xs b-b">
+                    <!-- 搜索框 -->
+                    <div class="input-group m-b-xxs">
+                        <div class="input-group">
+                            <input ng-keydown="enterSearch($event)" type="text" class="input-sm form-control" placeholder="请输入员工名称或编码" ng-model="query">
+                            <span class="input-group-btn">
+                              <button class="btn btn-sm btn-default" ng-click="search()" type="button">查询</button>
+                            </span>
+                          </div>
+                    </div>
+                </div>
+                <!-- 员工列表-->
+                <div ui-grid="gridOpts" ui-grid-pinning ui-grid-pagination ui-grid-selection ui-grid-resize-columns
+                 ui-grid-auto-resize ui-grid-move-columns style="height: 665px"></div>
+                <!-- end 员工列表-->
+            </div>
+        </div>
+        <!-- end column -->
+    </div>
+</div>

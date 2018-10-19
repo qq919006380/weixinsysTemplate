@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h4 class="modal-title">请选择{{title}}</h4>
+</div>
+
+<div class="modal-body">
+	<div class="input-group col-sm-8" style="margin-bottom: 15px;">
+        <input type="text" class="form-control " placeholder="输入查找信息" ng-model="query">
+        <a class="input-group-addon" ng-click="getdata()" >
+        	<i class="icon-magnifier text-md m-t-xxs">
+        	</i>
+        </a>
+	</div>
+    <div  ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-move-columns class="pur-modal-600" >
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="ok()">确定</button>
+    <button class="btn btn-default" ng-click="cancel()">取消</button>
+</div>

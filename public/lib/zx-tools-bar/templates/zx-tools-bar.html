@@ -1,0 +1,9 @@
+
+<div ng-if="config&&config.data.length>0" class="zx-tools-bar row" style="height:35px;margin-left:0px;">
+	<div class="tools-box">
+            <button type="button" class="operatorItem" ng-class="{'btn':item.type!='line','btn-default':item.type!='line','singleBtn':config.data.length===1,'lineBtn':item.type=='line'}" ng-repeat="item in config.data" ng-if="item.dispaly&&item.type!='save'"  ng-click="item.func()" ng-disabled="!item.enable"><i class="{{item.icon}} fa-fw" aria-hidden="true" style="margin-right: 3px;"></i>{{item.name}}
+            </button>
+        <button type="submit" class="operatorItem" ng-class="{'btn':item.type!='line','btn-default':item.type!='line','singleBtn':config.data.length===1,'lineBtn':item.type=='line'}" ng-repeat="item in config.data" ng-if="item.dispaly&&item.type=='save'"  ng-click="item.func()" ng-disabled="!item.enable"><i class="{{item.icon}} fa-fw" aria-hidden="true" style="margin-right: 3px;"></i>{{item.name}}
+        </button>
+	</div>
+</div>

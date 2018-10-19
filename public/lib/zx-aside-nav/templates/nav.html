@@ -1,0 +1,18 @@
+<li ng-repeat="item in data">
+    <a ui-sref="{{item.sref}}" class="auto" ng-if="item.sref">
+        <span class="font-bold" translate="{{item.translateId}}">{{item.name}}</span>
+        <span class="pull-right text-muted" ng-if="item.chindren">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+    </a>
+    <a href="javacript:;" class="auto" ng-if="!(item.sref)">
+        <span class="font-bold" translate="{{item.translateId}}">{{item.name}}</span>
+        <span class="pull-right text-muted" ng-if="item.chindren">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+    </a>
+    <ul class="nav nav-sub" ng-init="data=item.chindren" ng-include="'lib/zx-aside-nav/templates/nav.html'">
+    </ul>
+</li>

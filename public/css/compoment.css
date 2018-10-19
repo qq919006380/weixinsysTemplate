@@ -1,0 +1,100 @@
+/**** compoment.css ***/
+
+input[type="radio"], input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+input[type="radio"] + span{
+   
+    vertical-align: middle;
+}
+
+/** initialModal **/
+.initialModal .modal-condition {
+	padding: 10px 20px;
+}
+
+.initialModal .modal-container .header {
+	line-height: 30px; background-color: #a5a3a3; color: #fff; margin: 0; margin-bottom: 5px;
+}
+
+.initialModal .modal-container .itemsBox {
+	height: 400px; overflow: auto;
+}
+
+.initialModal .modal-container .itemsBox .item .row {
+	margin: 0; line-height:25px;
+}
+
+.initialModal .modal-container .itemsBox .item .row.even {
+	background-color: #efefef;
+}
+
+.initialModal .modal-container .itemsBox .item:hover,
+.initialModal .modal-container .itemsBox .item .row.even:hover {
+	background-color: #e2d4d4;
+}
+
+.initialModal .modal-container .itemsBox .item .col {
+	margin: 0; line-height:35px;
+}
+
+.initialModal .modal-container .itemsBox .item .detailBox {
+	background-color: rgb(238, 238, 238); line-height: 25px; padding: 5px 15px;
+}
+
+.initialModal .modal-container .itemsBox .loadmore {
+	text-align:center; text-align: center; width: 100%;
+}
+
+.data-grid-disabled .ui-grid-viewport
+{
+	cursor: not-allowed;
+}
+
+
+.data-grid-disabled .ui-grid-viewport .ui-grid-canvas{
+	pointer-events: none;
+}
+/** zx-condition-form **/
+.zx-condition-form { padding-left:0; padding-right:0; }
+.zx-condition-form .panel { margin: 0; }
+.zx-condition-form .panel-body { line-height:30px; background: #f5f5f5; }
+.zx-condition-form .condition-lable { display:inline-block; margin:10px; margin-left:0px; padding: 0 10px; border: 1px solid #eae3e3; border-radius: 3px; text-align:center;}
+.zx-condition-form .condition-lable:hover { color:#b38484; border: 1px solid #e06969; background:#f5f0f0; cursor:pointer; }
+.zx-condition-form .condition-lable b { color: #af8b8b; }
+.zx-condition-form .condition-lable .lable { color: #e06969; font-weight: 700; margin-left: 5px; }
+.zx-condition-form .condition-box-ctrl { float:right; }
+.zx-condition-form .condition-ctrl-btn { width: 110px; float: right; background: #f5f5f5; text-align: center; border: 1px solid #dee5e7; cursor:pointer; }
+.zx-condition-form .condition-ctrl-btn i {margin-left:5px; font-size: 16px; }
+.zx-condition-form .input-item { margin: 10px 0;}
+.zx-condition-form .input-item-btns { width: 140px; }
+.zx-condition-form .label-name { width: 100px; float: left}
+
+
+/*单据的已审核标识*/
+.auditflag { z-index: 10; position: absolute; right:60px; top: 15px; width: 70px; height: 70px; background:url(./../img/auditflag.png) no-repeat right 0; text-indent: -9999px;}
+
+
+/*nav-tabs*/
+.nav-tabs > li:hover > a, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
+	background-color: #edf1f2;
+    font-weight: 700;
+}
+/*货币input样式，提示*/
+.input-coin-box{
+	position: relative;
+}
+.input-coin{
+	position: absolute;
+	left: 60%;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	padding: 1px;
+	border: 0;
+}
+.input-detail .input-readonly{
+	background-color: #FFFFFF;
+}

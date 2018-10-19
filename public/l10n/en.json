@@ -1,0 +1,45 @@
+{
+
+  "header" : {
+    "navbar" : {
+      "setting" : {
+        "SETTING" : "setting",
+        "SYSTEM" : "system",
+        "CHANGEPSD" : "change psd",
+        "USER" : "user",
+        "LOGOUT" : "logout"
+
+      }
+    }
+  },
+  "aside" : {
+    "nav" : {
+      "components" : {
+        "system" : {
+          "SYSTEM" : "SYSTEM",
+          "YHGL":"YHGL"
+        },
+        "initial" : {
+          "INITIAL" : "INITIAL",
+          "CUSTOMER" : "CUSTOMER",
+          "EMPLOYEE" : "EMPLOYEE"          
+        }
+      }
+    }
+  },
+  "action":{
+    "NEW":"new",
+    "SAVE":"save",
+    "DEL":"del",
+    "MOD":"mod",
+    "VIEW":"view",
+    "CHECK":"check",
+    "UNCHECK":"uncheck",
+    "UPLOAD":"upload",
+    "YES":"yes",
+    "NO":"no",
+    "LOGIN":"login",
+    "LOGOUT":"logout"
+  }
+
+}

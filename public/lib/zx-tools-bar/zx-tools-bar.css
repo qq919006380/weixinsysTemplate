@@ -1,0 +1,19 @@
+
+/**
+**zx-tools-bar组件的样式
+**/
+
+.zx-tools-bar .tools-box {}
+
+.zx-tools-bar .tools-box .operatorItem:last-child{ border-radius: 0 10px 10px 0; }
+
+.zx-tools-bar .tools-box .operatorItem:first-child{ border-radius: 10px 0 0 10px; }
+
+.zx-tools-bar .tools-box .operatorItem.singleBtn { border-radius: 10px; }
+.zx-tools-bar .lineBtn{
+    background: none;
+    border: none;
+}
+
+
+

@@ -1,0 +1,167 @@
+<!-- app/initial/employee/detail.html -->
+<div class="modal-header">
+    <h3 class="modal-title">{{data.title}}</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled" ng-submit="ok()">
+        <div class="panel-body">
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label"><span>*</span>员工编码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"  ng-model="employee.ceid" required ng-readonly="data.type == 'edit'">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label"><span>*</span>员工名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cename" required>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label"><span>*</span>部门编码</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employe.dt_cid">-->
+                    <select ng-model="employee.cdclassid" class="form-control"
+                            ng-options="dt.cdclassid as dt.cdtname for dt in classitems"></select>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">性别</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employee.ee_csec"  required>-->
+                    <select class="form-control" ng-model="employee.cesec">
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">婚姻状况</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employee.ee_cmarry"  required>-->
+                    <select class="form-control" ng-model="employee.cemarry">
+                        <option value="0">已婚</option>
+                        <option value="1">未婚</option>
+                        <option value="2">离异</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">学历</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employee.ee_cdegree">-->
+                    <select class="form-control" ng-model="employee.cedegree">
+                        <option value="0">高中</option>
+                        <option value="1">大专</option>
+                        <option value="2">本科</option>
+                        <option value="3">硕士</option>
+                        <option value="4">博士</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">出生年月</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="employee.cedbirth"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened=true" is-open="opened" close-text="关闭" clear-text="清空" current-text="今天">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">在职状况</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employee.ee_cstatus">-->
+                    <select class="form-control" ng-model="employee.cestatus">
+                        <option value="0">离职</option>
+                        <option value="1">在职</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">籍贯</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cenativep">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">身份证编码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cecertify">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">入职日期</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="employee.ddate1"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened1=true" is-open="opened1" close-text="关闭" clear-text="清空" current-text="今天" >
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">离职日期</label>
+                <div class="col-sm-8">
+                    <input type="datetime" class="form-control" ng-model="employee.ddate2"
+                           datepicker-popup="yyyy-MM-dd" ng-click="opened2=true" is-open="opened2" close-text="关闭" clear-text="清空" current-text="今天" >
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">家庭住址1</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cnative1">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">家庭住址2</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cnative2">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">办公电话1</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.coficetel1">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">办公电话2</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.coficetel2">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">个人电话1</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cselftel1">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">个人电话2</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cselftel2">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">经手人标识</label>
+                <div class="col-sm-8">
+                    <!--<input type="text" class="form-control" ng-model="employee.ee_cbrkerflag"  required>-->
+                    <!--<select class="form-control" ng-model="employee.ee_cbrkerflag">
+                        <option value="0">否</option>
+                        <option value="1">是</option>
+                    </select>-->
+                    <label class="m-b-none">
+                        <input type="checkbox" ng-model="employee.ee_cbrkerflag" data-select="{{employee.ee_cbrkerflag=employee.ee_cbrkerflag=='1'?true:false}}"><i></i>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">备注</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="employee.cremark">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">确定</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+        </div>
+    </form>
+</div>

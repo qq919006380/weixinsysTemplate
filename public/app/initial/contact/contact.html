@@ -1,0 +1,46 @@
+
+<div class="wrapper-md" ng-controller="ContactCtrl" >
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <zx-tools-bar config="toolsbar"></zx-tools-bar>
+        </div>
+
+        <!-- hbox layout -->
+        <div class="hbox hbox-auto-xs hbox-auto-sm bg-light" style="height:750px;">
+
+            <!-- column -->
+            <div class="col w b-r" ng-show="false">
+                <div class="vbox">
+                    <a class="btn btn-link btn-block" ng-click="selectGroup({cclevel:''})" style="border-bottom:1px solid #ddd; line-height: 27px;" >客户列表</a>
+                    <!-- zx-ztree -->
+                    <zx-ztree id="contactTree" class="ztree" ng-if="treeData.length>0" config="treeConfig" data="treeData" handle="treeHandle" ></zx-ztree>
+                    <!-- end zx-ztree -->
+                </div>
+            </div>
+
+            <!-- column -->
+            <div class="col lter b-r">
+                <div class="vbox">
+                    <div class="wrapper-xs b-b">
+                        <!-- 网点搜索框 -->
+                        <div class="input-group m-b-xxs">
+                            <div class="input-group">
+                                <input  ng-keydown="enterEvent($event)" type="text" class="input-sm form-control" placeholder="输入编码或名称查找" ng-model="query">
+                                        <span class="input-group-btn">
+                                          <button class="btn btn-sm btn-default" ng-click="searchByName()" type="button">查询</button>
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                     <div  ui-grid="gridOptions"  ui-grid-pinning ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize ui-grid-move-columns style="height: 680px">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end hbox layout -->
+
+    </div>
+</div>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8" />
+  <title>智成家具商场版</title>
+  <meta name="description" content="zcsc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/compoment.css" type="text/css" />
+  <link rel="stylesheet" href="css/detailpage.css">
+  <link rel="stylesheet" href="lib/perfect-scrollbar/scrollbar.css">
+
+
+</head>
+<body ng-controller="AppCtrl">
+
+  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
+
+
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- <script src="vendor/jquery/jquery-ui.min.js"></script> -->
+
+  <!-- Angular -->
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular/angular-animate/angular-animate.js"></script>
+  <script src="vendor/angular/angular-resource/angular-resource.js"></script>
+  <script src="vendor/angular/angular-sanitize/angular-sanitize.js"></script>
+  <script src="vendor/angular/angular-ui-utils/ui-utils.js"></script>
+  <script src="vendor/angular/angular-cookies/angular-cookies.js"></script>
+  <!-- <script src="vendor/angular/angular-touch/angular-touch.js"></script> -->
+
+  <!-- Vendor -->
+  <script src="vendor/angular/angular-ui-router.js"></script> 
+  <script src="vendor/angular/ngStorage.js"></script>
+
+  <!-- bootstrap -->
+  <script src="vendor/angular/ui-bootstrap-tpls.js"></script>
+  <!-- <script src="vendor/angular/angular-ngLocale/angular-locale_zh-cn.js"></script> -->
+  <!-- lazyload -->
+  <script src="vendor/angular/oclazyload.js"></script>
+  <script src="vendor/angular/angular-md5/angular-md5.min.js"></script>
+
+  <script src="vendor/angular/angular-breadcrumb/angular-breadcrumb.min.js"></script>
+  
+
+  <!-- translate -->
+  <script src="vendor/angular/angular-translate/angular-translate.js"></script>
+  <script src="vendor/angular/angular-translate/loader-static-files.js"></script>
+  <script src="vendor/angular/angular-translate/storage-cookie.js"></script>
+  <script src="vendor/angular/angular-translate/storage-local.js"></script>
+
+  <!-- lib -->
+  <script src="lib/zx-tabviews/zx-tabviews.js"></script>
+  <link href="lib/zx-tabviews/zx-tabviews.css" rel="stylesheet">
+  <script src="lib/zx-aside-nav/zx-aside-nav.js"></script>
+  <link href="lib/zx-tools-bar/zx-tools-bar.css" rel="stylesheet">
+  <script src="lib/zx-tools-bar/zx-tools-bar.js"></script>
+  <script src="lib/zx-ztree/zx-ztree.js"></script>
+  <script src="lib/zx-query-model/zx-query-model.js"></script>
+  <link href="vendor/jquery/ztree/zTreeStyle.css" rel="stylesheet">
+  <script src="vendor/jquery/ztree/jquery.ztree.all.min.js"></script>
+  <script src="lib/zx-formdata/formdata.js"></script>
+  <script src="lib/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+  <!--
+  <script src="lib/zx-query-model/zx-query-model.js"></script>
+  -->
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+  <script src="js/lazyload.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/service.js"></script>
+  <script src="app/services/tools.js"></script>
+  <script src="app/services/services_initial.js"></script>
+  <!--
+
+  <script src="admin/services/tools.js"></script>
+  <script src="admin/directive.js"></script>
+   -->
+  <script src="js/directives/ui-nav.js"></script>
+  <script src="js/component.js"></script>
+
+  <!-- <script src="js/run.js"></script> -->
+  <div class="fakeloader" style="position: fixed;width: 100%;height: 100%;top: 0px;left: 0px;background-color: rgba(97, 101, 116, 0.69);z-index: 9999;" ng-if="loading"><div class="fl spinner1" style="position: absolute; left: 50%; top: 50%"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>
+
+</body>
+
+</html>

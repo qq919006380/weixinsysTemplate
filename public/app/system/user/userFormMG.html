@@ -1,0 +1,79 @@
+<!-- admin/user/userFormMG.html -->
+<div class="modal-header">
+    <h3 class="modal-title">{{data.title}}</h3>
+</div>
+<div class="modal-body">
+
+    <form class="form-horizontal ng-pristine ng-valid ng-valid-date ng-valid-required ng-valid-parse ng-valid-date-disabled"  ng-submit="ok()">
+        <div class="panel-body">
+        
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">用户编码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"  ng-model="tempItem.cid" ng-readonly="data.type!=='new'" required />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">用户名称</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="tempItem.cusername" required />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">用户分类</label>
+                <div class="col-sm-8">
+                    <ui-select ng-model="classselect" theme="bootstrap" on-select="onSelectCallback($item)">
+                        <ui-select-match placeholder="选择用户分类">{{$select.selected.cclassname}}</ui-select-match>
+                        <ui-select-choices repeat="item in classitems | filter: $select.search">
+                            <!-- <div ng-bind-html="item.cclassname | highlight: $select.search"></div> -->
+                            <span ng-bind-html="item.cclassname | highlight: $select.search"></span>(
+                            <small ng-bind-html="item.cclassid | highlight: $select.search"></small>)
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">员工编码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" ng-model="tempItem.ceeid" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6" ng-if="data.type === 'new'" >
+                <label class="col-sm-4 control-label">密码</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" ng-model="tempItem.cpwd" required />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">备注</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"   ng-model="tempItem.cremark" />
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">停用标识</label>
+                <div class="col-sm-8">
+                    <!-- <select class="form-control" ng-model="tempItem.cstop" >
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select> -->
+                    <label class="m-b-none">
+                        <input type="checkbox" ng-model="tempItem.cstop" data-select="{{tempItem.cstop=tempItem.cstop=='1'?true:false}}"><i></i>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="col-sm-4 control-label">是否超级用户</label>
+                <div class="col-sm-8">
+                    <label class="m-b-none">
+                        <input type="checkbox" ng-model="tempItem.csuper" data-select="{{tempItem.csuper=tempItem.csuper=='1'?true:false}}"><i></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="确定" />
+            <input type="button" class="btn btn-default" value="取消" ng-click="cancel()" />
+        </div>
+    </form>
+</div>

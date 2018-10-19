@@ -1,0 +1,41 @@
+<ul class="nav">
+
+  <li ng-repeat="item in data" >
+    <a href class="auto">      
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="{{item.icon}} icon text-primary-dker"></i>
+      <span class="font-bold" translate="{{item.translateId}}">{{item.name}}</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="{{item.translateId}}">{{item.name}}</span>
+        </a>
+      </li>
+      <li ui-sref-active="active" ng-repeat="child in item.chindren" >
+        <a ui-sref="{{child.sref}}">
+          <span translate="{{child.translateId}}" >{{child.name}}</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
+  <!-- <li ng-repeat="item in data" >
+      <a>
+        <i class="{{item.parent.icon}} icon text-primary-dker"></i>
+        <span class="font-bold">{{item.parent.name}}</span>
+      </a>
+      <ul class="nav dk">
+          <li ui-sref-active="active" ng-repeat="child in item.childs" >
+          <a ui-sref="{{child.sref}}">
+            <span>{{child.name}}</span>
+          </a>
+        </li>
+      </ul>
+  </li> -->
+
+</ul>
